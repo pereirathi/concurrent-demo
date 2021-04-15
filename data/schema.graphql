@@ -1,0 +1,1321 @@
+type AcknowledgeAlertMessage {
+  ok: Boolean
+  messages: [Message]
+}
+
+type ActionFeedbackReasons {
+  key: String
+  title: String
+}
+
+type AddChatId {
+  user: User
+}
+
+type AddCustomerAddress {
+  address: CustomerAddress
+  messages: [Message]
+}
+
+type AddDiscountToWallet {
+  discountWallet: DiscountWallet
+  messages: [Message]
+}
+
+type AddOrderSurvey {
+  ok: Boolean
+  messages: [Message]
+}
+
+input AddressInput {
+  latitude: Float
+  longitude: Float
+  zipcode: String
+  country: String
+  province: String!
+  city: String!
+  neighborhood: String
+  street: String
+  number: String
+  addressLine2: String
+  referencePoint: String
+}
+
+type AddressOutput {
+  latitude: Float
+  longitude: Float
+  zipcode: String
+  country: String
+  province: String!
+  city: String!
+  neighborhood: String
+  street: String
+  number: String
+  addressLine2: String
+  referencePoint: String
+}
+
+"""An enumeration."""
+enum AddressType {
+  HOME
+  WORK
+  OTHERS
+  HISTORIC
+}
+
+type AddUser {
+  token: String
+  refreshToken: String
+  user: User
+  errors: [Message]
+}
+
+type AlertMessage {
+  id: String
+  title: String
+  description: String
+  callToActionLabel: String
+}
+
+type Answer {
+  id: ID
+  title: String
+  body: String
+  primarySupportAction: SupportAction
+  secondarySupportAction: SupportAction
+}
+
+type Attachment {
+  comment: String
+}
+
+input AttachmentInput {
+  comment: String
+}
+
+type CancelOrder {
+  order: Order
+  messages: [Message]
+}
+
+type CardEncryptKey {
+  encryptKey: String
+  id: Int
+  messages: [Message]
+}
+
+type Category {
+  id: Int
+  displayName: String
+  order: Int
+  icon: String
+}
+
+type Chat {
+  consumerId: String
+  accessToken: String
+  chatEnabled: Boolean
+  chatStarted: Boolean
+  channelId: String
+}
+
+type ChatResponse {
+  chat: Chat
+  messages: [Message]
+}
+
+type CompleteCheckout {
+  order: Order
+  messages: [Message]
+}
+
+type ConfirmationCodeInfo {
+  consumerId: String
+  code: String
+  phoneNumber: String
+  expiredAt: String
+  createdAt: String
+}
+
+type ConfirmPhoneNumber {
+  user: User
+  errors: [Message]
+}
+
+type Consumer {
+  id: UUID
+  mainEmail: String
+  name: String
+  phoneNumber: String
+  document: String
+  birthDate: String
+  hasConsumerData: Boolean
+  phoneNumberValidated: Boolean
+  users: [UsersIdentity]
+  origin: String
+  pushToken: String
+  marketingOptIn: Boolean
+}
+
+type ContactRate {
+  reasons: [String]
+  createdDate: DateTime
+  orderNumber: String
+  messages: [ContactRateMessage]
+}
+
+type ContactRateMessage {
+  reason: String
+  description: String
+}
+
+type ContactRateType {
+  key: String
+  message: String
+}
+
+input ContactRateTypeInput {
+  type: ContactRateTypes
+  description: String
+}
+
+"""An enumeration."""
+enum ContactRateTypes {
+  CANCEL_ORDER
+  MODIFY_ORDER
+  DELAYED_ORDER
+  WHERE_ORDER
+  WRONG_ORDER
+  OTHER
+}
+
+"""An enumeration."""
+enum CountryEnum {
+  AW
+  AF
+  AO
+  AI
+  AX
+  AL
+  AD
+  AE
+  AR
+  AM
+  AS
+  AQ
+  TF
+  AG
+  AU
+  AT
+  AZ
+  BI
+  BE
+  BJ
+  BQ
+  BF
+  BD
+  BG
+  BH
+  BS
+  BA
+  BL
+  BY
+  BZ
+  BM
+  BO
+  BR
+  BB
+  BN
+  BT
+  BV
+  BW
+  CF
+  CA
+  CC
+  CH
+  CL
+  CN
+  CI
+  CM
+  CD
+  CG
+  CK
+  CO
+  KM
+  CV
+  CR
+  CU
+  CW
+  CX
+  KY
+  CY
+  CZ
+  DE
+  DJ
+  DM
+  DK
+  DO
+  DZ
+  EC
+  EG
+  ER
+  EH
+  ES
+  EE
+  ET
+  FI
+  FJ
+  FK
+  FR
+  FO
+  FM
+  GA
+  GB
+  GE
+  GG
+  GH
+  GI
+  GN
+  GP
+  GM
+  GW
+  GQ
+  GR
+  GD
+  GL
+  GT
+  GF
+  GU
+  GY
+  HK
+  HM
+  HN
+  HR
+  HT
+  HU
+  ID
+  IM
+  IN
+  IO
+  IE
+  IR
+  IQ
+  IS
+  IL
+  IT
+  JM
+  JE
+  JO
+  JP
+  KZ
+  KE
+  KG
+  KH
+  KI
+  KN
+  KR
+  KW
+  LA
+  LB
+  LR
+  LY
+  LC
+  LI
+  LK
+  LS
+  LT
+  LU
+  LV
+  MO
+  MF
+  MA
+  MC
+  MD
+  MG
+  MV
+  MX
+  MH
+  MK
+  ML
+  MT
+  MM
+  ME
+  MN
+  MP
+  MZ
+  MR
+  MS
+  MQ
+  MU
+  MW
+  MY
+  YT
+  NA
+  NC
+  NE
+  NF
+  NG
+  NI
+  NU
+  NL
+  NO
+  NP
+  NR
+  NZ
+  OM
+  PK
+  PA
+  PN
+  PE
+  PH
+  PW
+  PG
+  PL
+  PR
+  KP
+  PT
+  PY
+  PS
+  PF
+  QA
+  RE
+  RO
+  RU
+  RW
+  SA
+  SD
+  SN
+  SG
+  GS
+  SH
+  SJ
+  SB
+  SL
+  SV
+  SM
+  SO
+  PM
+  RS
+  SS
+  ST
+  SR
+  SK
+  SI
+  SE
+  SZ
+  SX
+  SC
+  SY
+  TC
+  TD
+  TG
+  TH
+  TJ
+  TK
+  TM
+  TL
+  TO
+  TT
+  TN
+  TR
+  TV
+  TW
+  TZ
+  UG
+  UA
+  UM
+  UY
+  US
+  UZ
+  VA
+  VC
+  VE
+  VG
+  VI
+  VN
+  VU
+  WF
+  WS
+  YE
+  ZA
+  ZM
+  ZW
+}
+
+type CreateChat {
+  chat: Chat
+  messages: [Message]
+}
+
+type CreateContactRate {
+  contactRate: ContactRate
+  messages: [Message]
+}
+
+type CreateSupportTicket {
+  ok: Boolean
+  messages: [Message]
+}
+
+type CustomerAddress {
+  latitude: Float
+  longitude: Float
+  zipcode: String
+  country: String
+  province: String
+  city: String
+  neighborhood: String
+  street: String
+  number: String
+  addressLine2: String
+  addressType: AddressType
+  name: String
+  referencePoint: String
+}
+
+"""
+The `Date` scalar type represents a Date
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar Date
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+type DeleteAccount {
+  ok: Boolean!
+  messages: [Message]
+}
+
+type DeleteCustomerAddress {
+  messages: [Message]
+  ok: Boolean
+}
+
+type DeliveryMan {
+  location: DeliveryManLocation
+}
+
+type DeliveryManLocation {
+  latitude: Float
+  longitude: Float
+}
+
+enum DeliveryMethod {
+  DELIVERY
+  PICKUP
+}
+
+type DeliveryOption {
+  deliveryMethod: DeliveryMethod
+  schedule: Schedule
+  scheduleDateTime: DateTime
+  address: AddressOutput
+  pickupPoc: Poc
+  deliveryForecast: String
+}
+
+input DeliveryOptionInput {
+  address: AddressInput
+  deliveryMethod: DeliveryMethod
+  schedule: Schedule
+  scheduleDateTime: DateTime
+  pickupPocId: Int
+}
+
+type DeliveryOptions {
+  deliveryMethods: [DeliveryMethod]
+  schedules: [Schedule]
+  scheduleDateTimes: [ScheduleDateTime]
+  pickupPocs: [Poc]
+  address: AddressOutput
+}
+
+type Department {
+  id: Int
+  displayName: String
+  order: Int
+  icon: String
+}
+
+type Discount {
+  id: Int
+  code: String
+  value: Float
+  valueType: DiscountValueType
+  onlyFirstPurchase: Boolean
+  onlyReceive: Boolean
+  startsAt: DateTime
+  endsAt: DateTime
+  description: String
+  usageLimitPerCustomer: Int
+  maximumDiscount: Float
+  active: Boolean
+  discountItems: [DiscountItem] @deprecated(reason: "Was not used by our clients and makes the query significantly slower")
+}
+
+input DiscountInput {
+  id: Int
+}
+
+type DiscountItem {
+  id: Int
+  title: String
+}
+
+enum DiscountValueType {
+  FIXED_AMOUNT
+  PERCENTAGE
+  FREE_SHIPPING
+}
+
+type DiscountWallet {
+  discounts: [Discount]
+}
+
+type Game {
+  remainingOrders: Int
+  totalOrders: Int
+  startsAt: String
+  endsAt: String
+  wonAt: String
+  couponAvailableAt: String
+  couponExpiresAt: String
+  couponValue: Float
+  status: Status
+}
+
+type GameResponse {
+  game: Game
+  messages: [Message]
+}
+
+type IdentityAfterLogin {
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityConfirmPhoneNumber {
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityLogin {
+  accessToken: String
+  refreshToken: String
+  idToken: String
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityProfile {
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityRefreshToken {
+  accessToken: String
+  messages: [Message]
+}
+
+type IdentityRegister {
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityResetPassword {
+  email: String
+  messages: [Message]
+}
+
+type IdentitySendConfirmationCode {
+  confirmationCodeInfo: ConfirmationCodeInfo
+  messages: [Message]
+}
+
+type IdentitySendPasswordRecovery {
+  email: String
+  messages: [Message]
+}
+
+type IdentitySignUp {
+  accessToken: String
+  refreshToken: String
+  idToken: String
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityUpdate {
+  consumer: Consumer
+  messages: [Message]
+}
+
+type IdentityUpdatePassword {
+  ok: Boolean
+  messages: [Message]
+}
+
+"""JSON String"""
+scalar JSONString
+
+type LineItem {
+  id: ID
+  displayName: String
+  quantity: Int
+  images: [String]
+  totalPrice: Float
+  totalOfferDiscount: Float
+  totalCouponDiscount: Float
+  totalDiscount: Float
+  category: ShelfProductCategory
+  brand: ShelfProductBrand
+  applicableDiscount: ShelfItemDiscount
+  discount: Discount
+}
+
+type LoadDeliveryOptions {
+  deliveryOptions: DeliveryOptions
+  events: [String]
+  messages: [Message]
+}
+
+type LoadOrder {
+  order: Order
+  messages: [Message]
+}
+
+type LoadShowCase {
+  showCase: ShowCase
+  messages: [Message]
+}
+
+type Login {
+  token: String
+  refreshToken: String
+  user: User
+  errors: [Message]
+}
+
+type ManageCheckout {
+  checkout: MobileCheckout
+  messages: [Message]
+}
+
+type Message {
+  category: MessageCategory
+  target: String
+  key: String
+  args: [String]
+  message: String
+}
+
+enum MessageCategory {
+  ERROR
+  INFO
+  VALIDATION
+  WARNING
+  UNEXPECTED_ERROR
+  UNAUTHORIZED
+}
+
+type MobileCheckout {
+  id: Int
+  lineItems: [MobileCheckoutLineItem]
+  deliveryOption: DeliveryOption
+  shipping: Shipping
+  paymentMethod: PaymentMethods
+  attachment: Attachment
+  discount: Discount
+  totalOfProducts: Int
+  totalLineItemsPrice: Float
+  subtotalPrice: Float
+  totalPrice: Float
+  totalDiscount: Float
+  change: Float
+  ordersMinPrice: Float
+  tip: Float
+}
+
+type MobileCheckoutLineItem {
+  id: ID
+  displayName: String
+  images: [String]
+  price: MobileCheckoutLineItemPrice
+  amount: Int
+  category: ShelfProductCategory
+  brand: ShelfProductBrand
+  applicableDiscount: ShelfItemDiscount
+  discount: Discount
+}
+
+input MobileCheckoutLineItemInput {
+  id: ID
+  amount: Int
+  discount: DiscountInput
+}
+
+type MobileCheckoutLineItemPrice {
+  min: Float
+  max: Float
+}
+
+type Mutation {
+  createChat(orderNumber: String!, pushToken: String, pushTokenType: String): CreateChat
+  startChat(orderNumber: String!): StartChat
+  addOrderSurvey(orderNumber: String!, type: SurveyType!, data: JSONString!): AddOrderSurvey
+  identitySignUp(email: String!, password: String!, name: String, phoneNumber: String, document: String, birthDate: String, sendConfirmationCode: Boolean!, pushToken: String, marketingOptIn: Boolean): IdentitySignUp
+  identityRegister(provider: String!, tokenEmail: String!, name: String!, phoneNumber: String!, document: String!, birthDate: String!, sendConfirmationCode: Boolean!, pushToken: String, marketingOptIn: Boolean): IdentityRegister
+  identityUpdate(name: String!, phoneNumber: String!, birthDate: String, marketingOptIn: Boolean): IdentityUpdate
+  identityLogin(email: String!, password: String!, pushToken: String): IdentityLogin
+  identityRefreshToken(refreshToken: String!): IdentityRefreshToken
+  identityConfirmPhoneNumber(confirmationCode: String!): IdentityConfirmPhoneNumber
+  identitySendConfirmationCode(phoneNumber: String!, retry: Boolean): IdentitySendConfirmationCode
+  identitySendPasswordRecovery(email: String!): IdentitySendPasswordRecovery
+  identityResetPassword(email: String!, code: String!, password: String!): IdentityResetPassword
+  identityUpdatePassword(currentPassword: String!, newPassword: String!): IdentityUpdatePassword
+  identityAfterLogin(email: String, pushToken: String): IdentityAfterLogin
+  acknowledgeAlertMessage(alertMessageId: ID!): AcknowledgeAlertMessage
+  recordSupportAction(orderNumber: String, answerId: ID!, actionId: String!): RecordSupportAction
+  recordAnswerFeedback(answerId: ID!, value: Int!): RecordAnswerFeedback
+  recordActionFeedback(answerId: ID!, actionId: String!, orderNumber: String!, reason: String, comment: String): RecordActionFeedback
+  createSupportTicket(issueDescription: String!, orderNumber: String, contactEmail: String, articleTitle: String): CreateSupportTicket
+  subscribeToDashButton: SubscribeToDashButton
+  registerDashButton(dashButtonToken: String!): RegisterDashButton
+  addDiscountToWallet(discountCode: String): AddDiscountToWallet
+  rateOrder(orderNumber: String!, rating: Int!, comment: String, reasons: [String]): RateOrder
+  cancelOrder(orderNumber: String!, reasons: [String], comment: String): CancelOrder
+  manageCheckout(discountCode: String, change: Float, lineItem: MobileCheckoutLineItemInput, deliveryOption: DeliveryOptionInput, paymentMethod: PaymentInput, attachment: AttachmentInput, forceOverrideProducts: Boolean, tip: Float): ManageCheckout
+  completeCheckout(paymentMethod: PaymentInput): CompleteCheckout
+  subscribeNewsletter(email: String!, latitude: Float!, longitude: Float!): SubscribeNewsletter
+  login(source: Source!, email: String, password: String, facebookAccessToken: String, accessToken: String, pushToken: String): Login
+  refreshToken(refreshToken: String!, username: String!): RefreshToken
+  addUser(source: Source!, givenName: String, familyName: String, email: String, password: String, document: String, phoneNumber: String, pushToken: String, birthdate: Date, facebookAccessToken: String, marketingOptIn: Boolean): AddUser
+  partialUpdateUser(givenName: String, familyName: String, phoneNumber: String, birthdate: Date, marketingOptIn: Boolean): PartialUpdateUser
+  updatePassword(currentPassword: String!, newPassword: String!): UpdatePassword
+  resetPassword(email: String!, verificationCode: String!, newPassword: String!): ResetPassword
+  confirmPhoneNumber(confirmationCode: Int!): ConfirmPhoneNumber
+  resendPhoneNumberConfirmation: ResendPhoneNumberConfirmation
+  sendPasswordRecovery(email: String!): SendPasswordRecovery
+  addCustomerAddress(street: String!, number: String!, city: String, province: String!, country: String!, neighborhood: String, latitude: Float!, longitude: Float!, addressLine2: String, zipcode: String, addressType: AddressType, name: String, referencePoint: String): AddCustomerAddress
+  deleteCustomerAddress(addressType: AddressType, name: String): DeleteCustomerAddress
+  addChatId(chatId: String!): AddChatId
+  deleteAccount: DeleteAccount
+  createContactRate(orderNumber: String!, reasons: [ContactRateTypeInput]!): CreateContactRate
+  registerPoc(document: String!, ownerName: String!, tradingName: String!, phone: String!, email: String!, password: String!, address: POCAddressInput, newsletterAllowed: Boolean!): RegisterPoc
+}
+
+type OpenTime {
+  start: String
+  end: String
+  weekDay: String
+}
+
+type Order {
+  id: ID
+  number: String!
+  createdDate: DateTime
+  totalItemsPrice: Float
+  totalDiscount: Float
+  totalPrice: Float
+  change: Float
+  tip: Float
+  statusesHistory: [OrderStatusHistory]
+  deliveryOption: DeliveryOption
+  deliveryMan: DeliveryMan
+  shipping: Shipping
+  paymentMethod: PaymentMethods
+  poc: Poc
+  lineItems: [LineItem]
+  discount: Discount
+  rating: OrderRating
+  attachment: Attachment
+  timeline: [TimelineItem]
+  canBeCanceled: Boolean
+}
+
+type OrderRating {
+  value: Int
+  comment: String
+  reasons: [String]
+}
+
+"""An enumeration."""
+enum OrderStatus {
+  PENDING
+  USER_CANCELLED
+  CS_CANCELLEDOC
+  POC_REJECT
+  DM_REJECT
+  POC_ACCEPTED
+  DM_ACCEPTED
+  DM_PICKED_UP
+  DELIVERED
+  DM_CANCELLATION_REQUEST
+  POC_EXPIRED
+  DM_EXPIRED
+  POC_SCHEDULED
+  POC_PICKED_UP
+  SUSPECT
+  ILLEGITIMATE
+  DM_WAITING_TO_PICK_UP
+  DM_EN_ROUTE
+  DM_WAITING_CUSTOMER
+  FAILED
+  TRANSFERED
+  POC_ABANDONED
+}
+
+type OrderStatusHistory {
+  status: OrderStatus
+  createdDate: DateTime
+}
+
+type OrderSupport {
+  order: Order
+  questions: [Question]
+}
+
+type PartialUpdateUser {
+  user: User
+  errors: [Message]
+}
+
+input PaymentInput {
+  id: ID
+  change: Float
+  cardToken: String
+}
+
+type PaymentMethods {
+  id: Int
+  displayName: String
+  image: String
+  paymentType: PaymentMethodsType
+  category: String
+  lastCardDigits: String
+  cardBrand: String
+}
+
+enum PaymentMethodsType {
+  DEBIT_CARD
+  CREDIT_CARD
+  CASH
+  ONLINE_PAYMENT
+}
+
+type Poc {
+  id: ID
+  tradingName: String
+  category: String
+  address: AddressOutput
+  contactPhoneNumber: String
+  operatingHours: [OpenTime]
+}
+
+input POCAddressInput {
+  address1: String
+  address2: String
+  number: String
+  city: String
+  coordinates: String
+  province: String
+  zip: String
+  name: String
+  countryCode: CountryEnum
+  provinceCode: String
+  neighborhood: String
+  id: Int
+}
+
+type ProductGroup {
+  id: ID
+  displayName: String
+  order: Int
+  icon: String
+}
+
+type ProductGroupUrlMapItem {
+  id: ID
+  title: String
+}
+
+type ProductGroupUrlMapType {
+  type: String
+  urlParam: String
+  items: [ProductGroupUrlMapItem]
+}
+
+type Query {
+  loadLastGame: GameResponse
+  loadChat(orderNumber: String!): ChatResponse
+  loadIdentityProfile: IdentityProfile
+  alertMessage: AlertMessage
+  listSupportQuestionCategories: [QuestionCategory]
+  loadOrderSupport(orderNumber: String!): OrderSupport
+  listSupportQuestions(categoryId: ID, search: String): [Question]
+  loadSupportAnswer(questionId: ID!, orderNumber: String): Answer
+  listActionFeedbackReasons: [ActionFeedbackReasons]
+  loadCurrentUser: User
+  listCustomerAddresses: [CustomerAddress]
+  loadCheckout: MobileCheckout
+  loadVerifiedCheckout: VerifiedMobileCheckout
+  loadCardEncryptKey: CardEncryptKey
+  loadOrder(orderNumber: String!): LoadOrder
+  listOrders(limit: Int): [Order]
+  loadOrderToRate: Order
+  loadOrdersInProgress(limit: Int): [Order]
+  listReasonsToCancelOrder: [ContactRateType]
+  listPaymentMethods: [PaymentMethods]
+  listAvailablePaymentMethods: [PaymentMethods]
+  loadProduct(id: ID, isVisitor: Boolean): ShelfProduct
+  listDepartments: [Department]
+  listCategories: [Category]
+  loadShowCase(filter: ShowCaseFilter, cursor: String, pageLength: Int): LoadShowCase
+  loadNewShowCase(filter: ShowCaseFilter, cursor: String, pageLength: Int): LoadShowCase
+  loadVisitorShowCase(filter: ShowCaseFilter): LoadShowCase
+  loadNewVisitorShowCase(filter: ShowCaseFilter): LoadShowCase
+  showCaseUrlMapper: ShowCaseUrlTypes
+  newShowCaseUrlMap: [ProductGroupUrlMapType]
+  listRootProductGroups: [ProductGroup]
+  search(searchTerm: String!): SearchResult
+  newSearch(searchTerm: String!): SearchResult
+  loadDeliveryOptions: LoadDeliveryOptions
+  loadDiscountWallet: DiscountWallet
+  listContactRateTypes: [ContactRateType]
+}
+
+type Question {
+  id: ID
+  title: String
+  description: String
+  order: Int
+}
+
+type QuestionCategory {
+  id: String
+  title: String
+  description: String
+  order: Int
+}
+
+type RateOrder {
+  order: Order
+  userTotalOrdersCount: Int @deprecated(reason: "This field is not used for the original analytics purpose anymore")
+  messages: [Message]
+}
+
+type RecordActionFeedback {
+  ok: Boolean
+  messages: [Message]
+}
+
+type RecordAnswerFeedback {
+  ok: Boolean
+  messages: [Message]
+}
+
+type RecordSupportAction {
+  ok: Boolean
+  messages: [Message]
+}
+
+type RefreshToken {
+  accessToken: String
+  user: User
+}
+
+type RegisterDashButton {
+  dashButtonToken: String
+  messages: [Message]
+}
+
+type RegisterPoc {
+  poc: Poc
+  accessToken: String
+  refreshToken: String
+  errors: [Message]
+}
+
+type ResendPhoneNumberConfirmation {
+  user: User
+}
+
+type ResetPassword {
+  email: String
+  messages: [Message]
+}
+
+enum Schedule {
+  NOW
+  SCHEDULED
+}
+
+type ScheduleDateTime {
+  date: Date
+  times: [TimeRange]
+}
+
+type SearchItem {
+  id: String
+  images: [String]
+  displayName: String
+  type: SearchItemType
+  price: SearchItemPrice
+  category: ShelfProductCategory
+  brand: ShelfProductBrand
+  applicableDiscount: ShelfItemDiscount
+}
+
+type SearchItemPrice {
+  min: Float
+  max: Float
+}
+
+enum SearchItemType {
+  PRODUCT
+  BRAND
+  CATEGORY
+}
+
+type SearchResult {
+  items(limit: Int): [SearchItem]
+  messages: [Message]
+}
+
+type SendPasswordRecovery {
+  email: String
+  errors: [Message]
+}
+
+type Shelf {
+  id: ID
+  type: ShelfType
+  displayName: String
+  items(page: Int, limit: Int): [ShelfItem]
+}
+
+type ShelfItem {
+  id: ID
+  type: ShelfItemType
+  displayName: String
+  images: [String]
+  price: ShelfProductPrice
+  category: ShelfProductCategory
+  brand: ShelfProductBrand
+  applicableDiscount: ShelfItemDiscount
+  isRgb: Boolean
+}
+
+type ShelfItemDiscount {
+  discountValue: Float
+  discountType: Int
+  finalValue: Float
+  presentedDiscountValue: Float
+  discountId: Int
+  discountCode: String
+}
+
+"""An enumeration."""
+enum ShelfItemType {
+  PRODUCT
+  CATEGORY
+  BRAND
+  PROMOTION
+  PILL
+  BANNER
+  PRODUCT_GROUP
+}
+
+type ShelfProduct {
+  id: Int
+  displayName: String
+  description: String
+  price: ShelfProductPrice
+  images: [String]
+  category: ShelfProductCategory
+  brand: ShelfProductBrand
+  isRgb: Boolean
+  applicableDiscount: ShelfItemDiscount
+  isColdBeverage: Boolean
+}
+
+type ShelfProductBrand {
+  id: Int
+  displayName: String
+}
+
+type ShelfProductCategory {
+  id: Int
+  displayName: String
+}
+
+type ShelfProductPrice {
+  min: Float
+  max: Float
+}
+
+"""An enumeration."""
+enum ShelfType {
+  CATEGORY
+  BRAND
+  CUSTOM
+  BILLBOARD
+  PROMOTION
+  PRODUCT
+  PILL
+  BANNER
+}
+
+type Shipping {
+  price: Float
+}
+
+type ShowCase {
+  shelves: [Shelf]
+  images: [String]
+  nextCursor: String
+  hasNextPage: Boolean
+}
+
+input ShowCaseFilter {
+  id: ID
+  type: ShowCaseType
+}
+
+"""An enumeration."""
+enum ShowCaseType {
+  CATEGORY
+  BRAND
+  CUSTOM
+  PRODUCT
+  PROMOTION
+  PRODUCT_GROUP
+  BANNER
+}
+
+type ShowCaseUrlItem {
+  id: Int
+  title: String
+}
+
+type ShowCaseUrlTypes {
+  showCaseTypes: [UrlType]
+}
+
+enum Source {
+  USER_PASSWORD
+  FACEBOOK
+  GOOGLE
+}
+
+type StartChat {
+  chat: Chat
+  messages: [Message]
+}
+
+enum Status {
+  active
+  started
+  won
+  over
+}
+
+type SubscribeNewsletter {
+  email: String
+  errors: [Message]
+}
+
+type SubscribeToDashButton {
+  ok: Boolean
+  messages: [Message]
+}
+
+type SupportAction {
+  id: String
+  title: String
+  description: String
+  supportLink: String
+}
+
+"""An enumeration."""
+enum SurveyType {
+  ONLINE_PAYMENT
+  WHY_NOT_ONLINE_PAYMENT
+}
+
+"""
+The `Time` scalar type represents a Time value as
+specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar Time
+
+type TimelineItem {
+  time: DateTime
+  localizedTime: String
+  type: TimelineStatusType
+  title: String
+  key: String
+  description: String
+}
+
+"""An enumeration."""
+enum TimelineStatusType {
+  IN_PROGRESS
+  DONE
+  FAILED
+}
+
+type TimeRange {
+  startAt: Time
+  endAt: Time
+}
+
+type UpdatePassword {
+  user: User
+  messages: [Message]
+}
+
+type UrlType {
+  type: String
+  urlParam: String
+  items: [ShowCaseUrlItem]
+}
+
+type User {
+  email: String
+  phoneNumber: String
+  givenName: String
+  familyName: String
+  birthdate: String
+  document: String
+  phoneNumberConfirmed: Boolean
+  totalOrdersCount: Int
+  memberGetMemberCode: String
+  dashButtonDeviceSerialNumber: String
+  chatId: String
+  marketingOptIn: Boolean
+}
+
+type UsersIdentity {
+  email: String
+  username: UUID
+  consumerId: UUID
+  provider: String
+  isMain: Boolean
+}
+
+"""UUID"""
+scalar UUID
+
+type VerifiedMobileCheckout {
+  checkout: MobileCheckout
+  messages: [Message]
+}
+

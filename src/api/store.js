@@ -1,33 +1,18 @@
-import gql from 'graphql-tag'
+import { graphql } from 'react-relay'
 
-export const STORE_PRODUCTS = gql`
-  query loadNewVisitorShowCase($filter: ShowCaseFilter) {
+export const stellaProduct = {
+  id: '99148850-0ca6-41b8-8822-389bc7d2b992', type: 'BRAND',
+}
+
+export const STORE_PRODUCTS = graphql`
+  query storeQuery($filter: ShowCaseFilter) {
     loadNewVisitorShowCase(filter: $filter) {
-      messages {
-        category
-        target
-        key
-        message
-      }
       showCase {
-        images
         shelves {
-          id
-          type
-          displayName
           items {
             id
-            type
             images
             displayName
-            category {
-              id
-              displayName
-            }
-            brand {
-              id
-              displayName
-            }
           }
         }
       }

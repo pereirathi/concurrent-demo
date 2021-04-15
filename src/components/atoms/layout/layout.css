@@ -1,0 +1,24 @@
+.layout-header {
+  background-color: #454a55;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color: white;
+}
+
+.layout-link {
+  color: #61dafb;
+  font-size: calc(2px + 1vmin);
+  padding: 2px;
+}
+
+main {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
