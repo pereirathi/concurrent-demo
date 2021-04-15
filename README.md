@@ -17,6 +17,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
