@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/concurrent-demo/static/css/main.991dc992.chunk.css",
+    "main.js": "/concurrent-demo/static/js/main.5f33c226.chunk.js",
+    "main.js.map": "/concurrent-demo/static/js/main.5f33c226.chunk.js.map",
+    "runtime-main.js": "/concurrent-demo/static/js/runtime-main.92cc5bed.js",
+    "runtime-main.js.map": "/concurrent-demo/static/js/runtime-main.92cc5bed.js.map",
+    "static/js/2.aa34832e.chunk.js": "/concurrent-demo/static/js/2.aa34832e.chunk.js",
+    "static/js/2.aa34832e.chunk.js.map": "/concurrent-demo/static/js/2.aa34832e.chunk.js.map",
+    "static/css/3.5ddc45ef.chunk.css": "/concurrent-demo/static/css/3.5ddc45ef.chunk.css",
+    "static/js/3.e4f616fc.chunk.js": "/concurrent-demo/static/js/3.e4f616fc.chunk.js",
+    "static/js/3.e4f616fc.chunk.js.map": "/concurrent-demo/static/js/3.e4f616fc.chunk.js.map",
+    "static/js/4.9f5edf7a.chunk.js": "/concurrent-demo/static/js/4.9f5edf7a.chunk.js",
+    "static/js/4.9f5edf7a.chunk.js.map": "/concurrent-demo/static/js/4.9f5edf7a.chunk.js.map",
+    "index.html": "/concurrent-demo/index.html",
+    "static/css/3.5ddc45ef.chunk.css.map": "/concurrent-demo/static/css/3.5ddc45ef.chunk.css.map",
+    "static/css/main.991dc992.chunk.css.map": "/concurrent-demo/static/css/main.991dc992.chunk.css.map",
+    "static/js/2.aa34832e.chunk.js.LICENSE.txt": "/concurrent-demo/static/js/2.aa34832e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.92cc5bed.js",
+    "static/js/2.aa34832e.chunk.js",
+    "static/css/main.991dc992.chunk.css",
+    "static/js/main.5f33c226.chunk.js"
+  ]
+}
