@@ -11,8 +11,8 @@ jobs:
       matrix:
         node-version: [15.x]
     steps:
+		- name: Checkout 🛎️
     - uses: actions/checkout@v2
-    - name: Checkout 🛎️				
 	  - name: Install and build
 			run: yarn install && yarn build		
 		- name: Deploy 🚀🚀🚀
