@@ -16,7 +16,7 @@ jobs:
       with:
         cmd: install
     - name: Install and Build
-      run: yarn install --ignore-optional && yarn build
+      run: yarn build
     - name: Deploy 🚀🚀🚀
       uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
