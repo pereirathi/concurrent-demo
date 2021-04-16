@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/concurrent-demo/static/css/main.991dc992.chunk.css",
-    "main.js": "/concurrent-demo/static/js/main.db0420ec.chunk.js",
-    "main.js.map": "/concurrent-demo/static/js/main.db0420ec.chunk.js.map",
-    "runtime-main.js": "/concurrent-demo/static/js/runtime-main.178db8dc.js",
-    "runtime-main.js.map": "/concurrent-demo/static/js/runtime-main.178db8dc.js.map",
-    "static/css/2.5ddc45ef.chunk.css": "/concurrent-demo/static/css/2.5ddc45ef.chunk.css",
+    "main.css": "/concurrent-demo/static/css/main.955ba250.chunk.css",
+    "main.js": "/concurrent-demo/static/js/main.15e6facc.chunk.js",
+    "main.js.map": "/concurrent-demo/static/js/main.15e6facc.chunk.js.map",
+    "runtime-main.js": "/concurrent-demo/static/js/runtime-main.dd4fdd86.js",
+    "runtime-main.js.map": "/concurrent-demo/static/js/runtime-main.dd4fdd86.js.map",
+    "static/css/2.80817a13.chunk.css": "/concurrent-demo/static/css/2.80817a13.chunk.css",
     "static/js/2.77c58783.chunk.js": "/concurrent-demo/static/js/2.77c58783.chunk.js",
     "static/js/2.77c58783.chunk.js.map": "/concurrent-demo/static/js/2.77c58783.chunk.js.map",
     "static/js/3.d3143ab5.chunk.js": "/concurrent-demo/static/js/3.d3143ab5.chunk.js",
     "static/js/3.d3143ab5.chunk.js.map": "/concurrent-demo/static/js/3.d3143ab5.chunk.js.map",
     "index.html": "/concurrent-demo/index.html",
-    "static/css/2.5ddc45ef.chunk.css.map": "/concurrent-demo/static/css/2.5ddc45ef.chunk.css.map",
-    "static/css/main.991dc992.chunk.css.map": "/concurrent-demo/static/css/main.991dc992.chunk.css.map",
-    "static/js/main.db0420ec.chunk.js.LICENSE.txt": "/concurrent-demo/static/js/main.db0420ec.chunk.js.LICENSE.txt"
+    "static/css/2.80817a13.chunk.css.map": "/concurrent-demo/static/css/2.80817a13.chunk.css.map",
+    "static/css/main.955ba250.chunk.css.map": "/concurrent-demo/static/css/main.955ba250.chunk.css.map",
+    "static/js/.gz": "/concurrent-demo/static/js/.gz",
+    "static/js/main.15e6facc.chunk.js.LICENSE.txt": "/concurrent-demo/static/js/main.15e6facc.chunk.js.LICENSE.txt",
+    "static/js/main.15e6facc.chunk.js.br": "/concurrent-demo/static/js/main.15e6facc.chunk.js.br"
   },
   "entrypoints": [
-    "static/js/runtime-main.178db8dc.js",
-    "static/css/main.991dc992.chunk.css",
-    "static/js/main.db0420ec.chunk.js"
+    "static/js/runtime-main.dd4fdd86.js",
+    "static/css/main.955ba250.chunk.css",
+    "static/js/main.15e6facc.chunk.js"
   ]
 }
