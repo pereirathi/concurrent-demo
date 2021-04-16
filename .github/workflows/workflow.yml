@@ -11,10 +11,10 @@ jobs:
       matrix:
         node-version: [15.x]
     steps:
-		- name: Checkout 🛎️
     - uses: actions/checkout@v2
-	  - name: Install and build
-			run: yarn install && yarn build		
+    - name: Checkout				
+			run: yarn install && yarn build
+		- name: Install and build		
 		- name: Deploy 🚀🚀🚀
 	  	uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
